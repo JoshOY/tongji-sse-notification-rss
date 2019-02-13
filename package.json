@@ -1,0 +1,28 @@
+{
+  "name": "tongji-sse-notification-rss",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:JoshOY/tongji-sse-notification-rss.git",
+  "author": "Josh Ouyang <me@joshoy.org>",
+  "license": "MIT",
+  "scripts": {
+    "start": "babel-node index.js"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "@babel/runtime": "^7.3.1",
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "feed": "^2.0.2",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1"
+  }
+}
