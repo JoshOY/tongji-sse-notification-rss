@@ -5,10 +5,12 @@ import cheerio from 'cheerio';
 import { Feed } from 'feed';
 import express from 'express';
 import config from './config.json';
+import he from 'he';
 
 const BASE_URL = 'http://sse.tongji.edu.cn';
 const SITE_URL = 'http://sse.tongji.edu.cn/Data/List/xwdt';
 const INTERVAL_SECONDS = 600;
+
 
 function generateNewFeed() {
   return new Feed({
@@ -82,11 +84,11 @@ async function getNewsContent(newsItem) {
     });
   }
   // if success
-  const $ = cheerio.load(responseBody);
+  const $ = cheerio.load(responseBody);  // { decodeEntities: false }
   const contentHTML = $('.view-cnt').html()
     || `<div>Read news: <a href="${newsItem.link}">${newsItem.link}</a></div>` ;
   return _.assign({}, newsItem, {
-    contentHTML,
+    contentHTML: he.decode(contentHTML),
   });
 }
 
