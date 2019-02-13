@@ -17,7 +17,7 @@ function generateNewFeed() {
     title: '同济软院通知 RSS',
     description: '同济软院通知 RSS',
     id: config.feedUrl,
-    link: feedUrl,
+    link: config.feedUrl,
     language: 'zh-cn',
     ttl: '60',
     updated: new Date(),
